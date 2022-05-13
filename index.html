@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Vue.js</title>
+</head>
+
+<body>
+
+
+  <div id="ahmed">
+    <h1>Welcome To Vue.js Course </h1>
+    <p>Welcome {{ 'Dev ' + name }} We Are Happy to see you.</p>
+    <p>Your age is: {{ age + ' Years'}} </p>
+    <p>Your First Skills Is: {{ skills[0] }} </p>
+    <p>Your Are {{ isSubscribed ? 'Subscribed' : 'Not Subscribed'}} </p>
+    <p>First Test Name Is: {{ completedTest[1].testNmae }} </p>
+    <p>First Test Result Is: {{ completedTest[1].testResult }} </p>
+    <p> {{ YourAgeInDays() }} </p>
+    <p> {{ date }} </p>
+    <button @click="ShowNewDate">Show New Date</button>
+  </div>
+
+  <script src="js/vue.js"></script>
+  <script>
+
+    new Vue({
+      el: '#ahmed',
+      data: {
+        name: 'Ahmed Al Sharkawy',
+        age: 22,
+        date: 'today',
+        skills: ['Html', 'Css', 'PhP'],
+        isSubscribed: false,
+        completedTest: [
+          {
+            testNmae: 'first Test',
+            testResult: '80%'
+          },
+          {
+            testNmae: 'Second Test',
+            testResult: '70%'
+          },
+          {
+            testNmae: 'Third Test',
+            testResult: '90%'
+          },
+        ],
+      },
+      methods: {
+        YourAgeInDays: function () {
+          return 'Yours Age In Days Is: ' + this.age * 12
+        },
+        ShowNewDate: function () {
+          this.date = Date()
+        },
+      },
+    })
+  </script>
+</body>
+
+</html>
