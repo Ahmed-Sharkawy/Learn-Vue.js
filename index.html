@@ -13,24 +13,20 @@
 
   <div id="ahmed">
     <h1>Welcome To Vue.js Course </h1>
-    <p>Welcome {{ 'Dev ' + name }} We Are Happy to see you.</p>
-    <p v-text=" name ? name : 'No Name'"></p>
-    <p v-html="title"></p>
-    <ul>
-      <li v-for="skill in skills">
-        {{ skill }}
-      </li>
-    </ul>
-    <ul>
-      <li v-for="(skill, index) in skills">
-        {{ index }} => {{ skill }}
-      </li>
-    </ul>
-    <ul>
-      <li v-for="(test, index) in completedTest">
-        {{ index }} => {{ test.testName }} || {{ test.testResult }}
-      </li>
-    </ul>
+    <p v-if="source.length > 5 ">{{source.length}}عدد الحروف اكبر من</p>
+    <!-- <p v-if=" age < 18 ">You are not over the legal age</p>
+    <p v-else-if=" age >= 40 ">You are over the required age</p>
+    <p v-else> you Didnt Set A  Name</p>
+    <p v-once> you Didnt Set A Name</p>
+    <p v-show="name"> you Didnt Set A Name</p>
+    <a :href="url">
+      <img v-bind:src="urlImage" alt="" srcset="">
+    </a>
+    <p> Counter Is {{ counter }}</p>ي
+    <button v-on:click.once="counter++">button</button> -->
+    <form action="" method="post">
+      <input type="text" v-model:value="source" >
+    </form>
   </div>
 
   <script src="js/vue.js"></script>
@@ -39,25 +35,24 @@
     new Vue({
       el: '#ahmed',
       data: {
-        name: true,
-        title: "<div class='rank'>this.name</div>",
-        skills: ['Html', 'Css', 'PhP', 'Vue.js'],
-        completedTest: [
-          {
-            testName: 'first Test',
-            testResult: '80%'
-          },
-          {
-            testName: 'Second Test',
-            testResult: '70%'
-          },
-          {
-            testName: 'Third Test',
-            testResult: '90%'
-          },
-        ],
-      },
+        name: '',
+        // age:0,
+        // url: "https://www.google.com/",
+        // urlImage: "https://image.shutterstock.com/image-illustration/number-300-white-on-light-260nw-1683875761.jpg",
+        // counter: 0,
+        source: 0,
+        fun: function () {
+          if (this.source.length > 5 ) {
+            return this.name = "Ahmed"
+          }
+        }
+      }
     })
+
+
+
+
+
   </script>
 </body>
 
